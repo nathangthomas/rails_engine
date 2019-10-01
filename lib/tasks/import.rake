@@ -24,7 +24,6 @@ namespace :import do
       Customer.import!(customers)
       p 'Customers have been imported!'
 
-
       items = []
       CSV.foreach(item_file, headers: true) do |row|
         items << row.to_hash
@@ -38,7 +37,6 @@ namespace :import do
       end
       Invoice.import!(invoices)
       p 'Invoices have been imported!'
-
 
       invoice_items = []
       CSV.foreach(invoice_item_file, headers: true) do |row|
