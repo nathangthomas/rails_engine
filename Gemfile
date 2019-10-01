@@ -7,10 +7,18 @@ gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'rake'
+gem 'fast_jsonapi'
+gem 'activerecord-import'
+gem 'rspec-rails'
+
 
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
