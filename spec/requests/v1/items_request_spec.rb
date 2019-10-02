@@ -16,7 +16,7 @@ describe 'Items API' do
     expect(items.class).to eq Hash
     expect(items['data'].count).to eq(2)
     expect(items['data'][0].keys).to eq(['id', 'type', 'attributes'])
-    expect(items['data'][0]['attributes'].keys).to eq(['name', 'description', 'merchant_id', 'unit_price'])
+    expect(items['data'][0]['attributes'].keys).to eq(['id', 'name', 'description', 'merchant_id', 'unit_price'])
   end
 
   it 'sends a single item' do
@@ -25,6 +25,6 @@ describe 'Items API' do
     items = JSON.parse(response.body)
     expect(items.class).to eq Hash
     expect(items['data'].keys).to eq(['id', 'type', 'attributes'])
-    expect(items['data']['attributes'].keys).to eq(['name', 'description', 'merchant_id', 'unit_price'])
+    expect(items['data']['attributes'].keys).to eq(['id', 'name', 'description', 'merchant_id', 'unit_price'])
   end
 end

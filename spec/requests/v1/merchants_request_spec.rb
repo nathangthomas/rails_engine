@@ -14,7 +14,7 @@ describe 'Merchants API' do
     expect(merchants.class).to eq Hash
     expect(merchants['data'].count).to eq(3)
     expect(merchants['data'][0].keys).to eq(['id', 'type', 'attributes'])
-    expect(merchants['data'][0]['attributes'].keys).to eq(['name'])
+    expect(merchants['data'][0]['attributes'].keys).to eq(['id', 'name'])
   end
 
   it 'sends a a single merchant' do
@@ -23,6 +23,6 @@ describe 'Merchants API' do
     merchants = JSON.parse(response.body)
     expect(merchants.class).to eq Hash
     expect(merchants['data'].keys).to eq(['id', 'type', 'attributes'])
-    expect(merchants['data']['attributes'].keys).to eq(['name'])
+    expect(merchants['data']['attributes'].keys).to eq(['id', 'name'])
   end
 end

@@ -21,7 +21,7 @@ describe 'Invoices API' do
     expect(invoices.class).to eq Hash
     expect(invoices['data'].count).to eq(2)
     expect(invoices['data'][0].keys).to eq(['id', 'type', 'attributes'])
-    expect(invoices['data'][0]['attributes'].keys).to eq(["customer_id", "merchant_id", "status"])
+    expect(invoices['data'][0]['attributes'].keys).to eq(["id", "customer_id", "merchant_id", "status"])
   end
 
   it 'sends a single invoice' do
@@ -30,6 +30,6 @@ describe 'Invoices API' do
     invoices = JSON.parse(response.body)
     expect(invoices.class).to eq Hash
     expect(invoices['data'].keys).to eq(['id', 'type', 'attributes'])
-    expect(invoices['data']['attributes'].keys).to eq(["customer_id", "merchant_id", "status"])
+    expect(invoices['data']['attributes'].keys).to eq(["id", "customer_id", "merchant_id", "status"])
   end
 end

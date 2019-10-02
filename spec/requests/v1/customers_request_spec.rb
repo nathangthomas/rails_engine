@@ -14,7 +14,7 @@ describe 'Customers API' do
     expect(customers.class).to eq Hash
     expect(customers['data'].count).to eq(3)
     expect(customers['data'][0].keys).to eq(['id', 'type', 'attributes'])
-    expect(customers['data'][0]['attributes'].keys).to eq(['first_name', 'last_name'])
+    expect(customers['data'][0]['attributes'].keys).to eq(['id', 'first_name', 'last_name'])
   end
 
   it 'sends a a single customer' do
@@ -23,6 +23,6 @@ describe 'Customers API' do
     merchants = JSON.parse(response.body)
     expect(merchants.class).to eq Hash
     expect(merchants['data'].keys).to eq(['id', 'type', 'attributes'])
-    expect(merchants['data']['attributes'].keys).to eq(['first_name', 'last_name'])
+    expect(merchants['data']['attributes'].keys).to eq(['id', 'first_name', 'last_name'])
   end
 end

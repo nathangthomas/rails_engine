@@ -1,4 +1,4 @@
 class TransactionSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :result
+  attributes :id, :result
 end
