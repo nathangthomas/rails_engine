@@ -17,5 +17,4 @@ class Customer < ApplicationRecord
     order(total: :desc).
     limit(1)
   end
-
 end
