@@ -11,7 +11,7 @@ gem 'rake'
 gem 'fast_jsonapi'
 gem 'activerecord-import'
 gem 'rspec-rails'
-
+gem 'table_print'
 
 
 group :development, :test do
