@@ -20,7 +20,7 @@ class Merchant < ApplicationRecord
     group(:id).
     merge(Transaction.successful).
     order(total: :DESC).
-    limit(5)
+    limit(quantity)
   end
 
   def self.favorite_merchant(customer_id)
