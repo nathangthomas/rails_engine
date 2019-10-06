@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :merchants do
+        get '/find_all', to: 'search#index'
+        get '/find', to: 'search#show'
+        get '/random', to: 'random#show'
         get '/:id/items', to: 'items#index'
         get '/:id/invoices', to: 'invoices#index'
         get '/most_revenue/', to: 'most_revenue#index'
@@ -11,6 +14,9 @@ Rails.application.routes.draw do
       end
 
       namespace :invoices do
+        get '/find_all', to: 'search#index'
+        get '/find', to: 'search#show'
+        get '/random', to: 'random#show'
         get '/:id/transactions', to: 'transactions#index'
         get '/:id/invoice_items', to: 'invoice_items#index'
         get '/:id/items', to: 'items#index'
@@ -19,11 +25,17 @@ Rails.application.routes.draw do
       end
 
       namespace :invoice_items do
+        get '/find_all', to: 'search#index'
+        get '/find', to: 'search#show'
+        get '/random', to: 'random#show'
         get  '/:id/invoice', to: 'invoice#show'
         get  '/:id/item', to: 'item#show'
       end
 
       namespace :items do
+        get '/find_all', to: 'search#index'
+        get '/find', to: 'search#show'
+        get '/random', to: 'random#show'
         get '/:id/invoice_items', to: 'invoice_items#index'
         get '/:id/merchant', to: 'merchant#show'
         get '/most_revenue', to: 'most_revenue#index'
@@ -31,10 +43,16 @@ Rails.application.routes.draw do
       end
 
       namespace :transactions do
+        get '/find_all', to: 'search#index'
+        get '/find', to: 'search#show'
+        get '/random', to: 'random#show'
         get '/:id/invoice', to: 'invoice#show'
       end
 
       namespace :customers do
+        get '/find_all', to: 'search#index'
+        get '/find', to: 'search#show'
+        get '/random', to: 'random#show'
         get '/:id/invoices', to: 'invoices#index'
         get '/:id/transactions', to: 'transactions#index'
         get '/:id/favorite_merchant', to: 'favorite_merchant#show'

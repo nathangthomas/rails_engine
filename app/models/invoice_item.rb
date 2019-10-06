@@ -4,6 +4,8 @@ class InvoiceItem < ApplicationRecord
 
   validates_presence_of :quantity, :unit_price
 
+  scope(:order_by_id, -> { order(id: :asc) })
+
   def self.items_invoice_items(id)
     joins(:item).where(items: {id: id})
   end
