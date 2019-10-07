@@ -24,13 +24,13 @@ There are six record types: Merchants, Items, Invoices, Invoice Items, Transacti
 
 See `routes.rb` file for a complete list of endpoints.
 
-Below are examples of several endpoints you can try out in your browser. Just run `rails s` in your terminal to get your server running and
+Below are examples of several endpoints you can try out in your browser.
 
 ### Record Endpoints
 
 * Index: GET "/api/v1/merchants"
 
-* Show: GET "GET /api/v1/merchants/id"
+* Show: GET "/api/v1/merchants/id"
 
 * Single record finder: GET "/api/v1/merchants/find?parameters"
 
