@@ -1,10 +1,11 @@
 # README
 
-* Ruby version 2.4.1
-
-* Rails version 5.2.3
+## About
+This project uses Rails and Active Record to build a JSON API which exposes the SalesEngine data schema.
 
 ## Setup
+* Ruby version 2.4.1
+* Rails version 5.2.3
 
 * Run `bundle`
 
@@ -50,3 +51,7 @@ Below are examples of several endpoints you can try out in your browser. Just ru
 * Total revenue for date x across all merchants: GET "api/v1/merchants/revenue/"
 
 * Customer who has conducted the most successful transactions: GET "api/v1/merchants/:id/favorite_customer"
+
+## Schema
+
+<img width="1192" alt="Screen Shot 2019-10-03 at 11 25 20 AM" src="https://user-images.githubusercontent.com/47466067/66281475-c1674180-e878-11e9-9c2c-33ea877396e1.png">
