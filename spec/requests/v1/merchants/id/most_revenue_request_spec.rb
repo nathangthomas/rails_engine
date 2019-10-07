@@ -28,7 +28,7 @@ describe 'Most Revenue' do
     expect(response).to be_successful
     merchant_items = JSON.parse(response.body)
     expect(merchant_items.class).to eq Hash
-    expect(merchant_items['data'].count).to eq(1)
+    expect(merchant_items['data'][0]['id']).to eq(@merchant_1.id.to_s)
     expect(merchant_items['data'][0]['attributes']['name']).to eq(@merchant_1.name)
   end
 end

@@ -30,7 +30,6 @@ describe 'Total Revenue' do
     expect(response).to be_successful
     revenue = JSON.parse(response.body)
     expect(revenue.class).to eq Hash
-    expect(revenue['data'].count).to eq(1)
-    expect(revenue["data"][0]["attributes"]["total_revenue"]).to be_an(String)
+    expect(revenue["data"]["attributes"]["total_revenue"]).to be_an(String)
   end
 end
