@@ -24,11 +24,13 @@ describe 'Total Revenue' do
   end
 
   it 'returns the total revenue for all merchants for a given date' do
-    get "/api/v1/merchants/revenue?date=#{Time.now}"
+    time = Time.now
+    date = "#{time.year}-#{time.day}-#{time.month}"
+    get "/api/v1/merchants/revenue?date=#{date}"
     expect(response).to be_successful
     revenue = JSON.parse(response.body)
     expect(revenue.class).to eq Hash
     expect(revenue['data'].count).to eq(1)
-    expect(revenue["data"][0]["attributes"]["revenue"]).to be_an(Float)
+    expect(revenue["data"][0]["attributes"]["total_revenue"]).to be_an(String)
   end
 end

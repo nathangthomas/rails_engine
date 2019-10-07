@@ -26,7 +26,7 @@ describe 'InvoiceItmes API' do
     expect(invoice_items.class).to eq Hash
     expect(invoice_items['data'].count).to eq(2)
     expect(invoice_items['data'][0].keys).to eq(['id', 'type', 'attributes'])
-    expect(invoice_items['data'][0]['attributes'].keys).to eq(['id', 'quantity', 'unit_price'])
+    expect(invoice_items['data'][0]['attributes'].keys).to eq(['id', 'quantity', 'item_id', 'invoice_id', 'unit_price'])
   end
 
   it 'sends a single invoice_item' do
@@ -35,6 +35,6 @@ describe 'InvoiceItmes API' do
     invoice_items = JSON.parse(response.body)
     expect(invoice_items.class).to eq Hash
     expect(invoice_items['data'].keys).to eq(['id', 'type', 'attributes'])
-    expect(invoice_items['data']['attributes'].keys).to eq(['id', 'quantity', 'unit_price'])
+    expect(invoice_items['data']['attributes'].keys).to eq(['id', 'quantity', 'item_id', 'invoice_id', 'unit_price'])
   end
 end

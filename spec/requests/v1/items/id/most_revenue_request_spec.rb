@@ -27,7 +27,7 @@ describe 'most revenue' do
   end
 
   it 'returns the top x ranked items by total revenue generated' do
-    get '/api/v1/items/most_revenue?quantity=2'
+    get "/api/v1/items/most_revenue?quantity=#{@invoice_item_1.quantity}"
     expect(response).to be_successful
     most_revenue = JSON.parse(response.body)
     expect(most_revenue.class).to eq Hash

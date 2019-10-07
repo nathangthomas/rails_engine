@@ -31,7 +31,7 @@ describe 'items merchant' do
     expect(response).to be_successful
     items_merchant = JSON.parse(response.body)
     expect(items_merchant.class).to eq Hash
-    expect(items_merchant['data'].count).to eq(1)
-    expect(items_merchant['data'][0]['attributes']['name']).to eq(@merchant_1.name)
+    expect(items_merchant['data']['id']).to eq(@merchant_1.id.to_s)
+    expect(items_merchant['data']['attributes']['name']).to eq(@merchant_1.name)
   end
 end

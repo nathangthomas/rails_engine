@@ -29,7 +29,7 @@ describe 'invoice_items invoice' do
     expect(response).to be_successful
     invoice = JSON.parse(response.body)
     expect(invoice.class).to eq Hash
-    expect(invoice['data'].count).to eq(1)
-    expect(invoice['data'][0]['attributes']['status']).to eq('shipped')
+    expect(invoice['data']['id']).to eq(@invoice_1.id.to_s)
+    expect(invoice['data']['attributes']['status']).to eq('shipped')
   end
 end

@@ -23,6 +23,8 @@ describe 'Invoice InvocieItems' do
     @transaction_1 = Transaction.create!(invoice_id: @invoice_1.id, credit_card_number: 4654405418249632, credit_card_expiration_date: '', result: 'success')
     @transaction_2 = Transaction.create!(invoice_id: @invoice_1.id, credit_card_number: 9654405418234567, credit_card_expiration_date: '', result: 'failed')
     @transaction_3 = Transaction.create!(invoice_id: @invoice_1.id, credit_card_number: 9654405418234567, credit_card_expiration_date: '', result: 'failed')
+
+    @unit_price = (@invoice_item_2.unit_price/100.to_f).to_s
   end
 
   it 'sends a collection of associated invoice_items' do
@@ -32,6 +34,6 @@ describe 'Invoice InvocieItems' do
     expect(invoice_invoice_items.class).to eq Hash
     expect(invoice_invoice_items['data'].count).to eq(2)
     expect(invoice_invoice_items['data'][0]['attributes']['quantity']).to eq(@invoice_item_1.quantity)
-    expect(invoice_invoice_items['data'][1]['attributes']['unit_price']).to eq(@invoice_item_2.unit_price)
+    expect(invoice_invoice_items['data'][1]['attributes']['unit_price']).to eq(@unit_price)
   end
 end

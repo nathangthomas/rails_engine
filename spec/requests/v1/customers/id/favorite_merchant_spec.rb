@@ -29,7 +29,7 @@ describe 'favorite merchant' do
     expect(response).to be_successful
     favorite_merchant = JSON.parse(response.body)
     expect(favorite_merchant.class).to eq Hash
-    expect(favorite_merchant['data'].count).to eq(1)
-    expect(favorite_merchant['data'][0]['id']).to eq(@merchant_1.id.to_s)
+    expect(favorite_merchant['data']['id']).to eq(@merchant_1.id.to_s)
+    expect(favorite_merchant['data']['attributes']['name']).to eq(@merchant_1.name)
   end
 end

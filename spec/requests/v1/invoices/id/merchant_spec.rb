@@ -30,6 +30,6 @@ describe 'Invoice Merchant' do
     expect(response).to be_successful
     invoice_merchant = JSON.parse(response.body)
     expect(invoice_merchant.class).to eq Hash
-    expect(invoice_merchant['data'][0]['attributes']['name']).to eq(@merchant_1.name)
+    expect(invoice_merchant['data']['attributes']['name']).to eq(@merchant_1.name)
   end
 end

@@ -46,9 +46,9 @@ Below are examples of several endpoints you can try out in your browser. Just ru
 
 ### Business Intelligence
 
-* Top x Merchants ranked by total revenue: GET "api/v1/merchants/most_revenue/"
+* Top x Merchants ranked by total revenue: GET "api/v1/merchants/most_revenue"
 
-* Total revenue for date x across all merchants: GET "api/v1/merchants/revenue/"
+* Total revenue for date x across all merchants: GET "api/v1/merchants/revenue"
 
 * Customer who has conducted the most successful transactions: GET "api/v1/merchants/:id/favorite_customer"
 
