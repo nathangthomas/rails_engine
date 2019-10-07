@@ -13,6 +13,10 @@ gem 'activerecord-import'
 gem 'rspec-rails'
 gem 'table_print'
 
+group :test do
+  gem 'simplecov', require: false
+end
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
