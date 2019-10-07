@@ -30,6 +30,6 @@ describe 'Invoice Customer' do
     expect(response).to be_successful
     invoice_customer = JSON.parse(response.body)
     expect(invoice_customer.class).to eq Hash
-    expect(invoice_customer['data'][0]['attributes']['first_name']).to eq(@customer_1.first_name)
+    expect(invoice_customer['data']['attributes']['first_name']).to eq(@customer_1.first_name)
   end
 end

@@ -17,12 +17,12 @@ class Item < ApplicationRecord
     where(invoice_items: {id: id})
   end
 
-  def self.most_revenue(x)
+  def self.most_revenue(quantity)
     joins(:invoice_items)
-    .select('items.*,sum(invoice_items.quantity * .invoice_items.unit_price) AS total')
+    .select('items.*,sum(invoice_items.quantity * invoice_items.unit_price) AS total')
     .group(:id)
     .order('total desc')
-    limit(x)
+    .limit(quantity)
   end
 
   def self.best_day(item_id)

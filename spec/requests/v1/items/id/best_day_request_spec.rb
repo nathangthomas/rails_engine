@@ -32,8 +32,8 @@ describe 'best day' do
     best_day = JSON.parse(response.body)
     expect(best_day.class).to eq Hash
 
-    expect(best_day['data'].count).to eq(1)
-    expect(best_day['data'][0]['attributes']['name']).to eq(@item_1.name)
+    expect(best_day['data']['id']).to eq(@item_1.id.to_s)
+    expect(best_day['data']['attributes']['name']).to eq(@item_1.name)
 
   end
 end

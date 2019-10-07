@@ -31,7 +31,6 @@ describe 'item search' do
     get "/api/v1/items/find_all?id=#{@item_1.id}"
 
     item = JSON.parse(response.body)
-    binding.pry
     expect(response).to be_successful
     expect(item['data'][0]['id'].to_i).to eq(@item_1.id)
     expect(item['data'][0]['attributes']['name']).to eq(@item_1.name)

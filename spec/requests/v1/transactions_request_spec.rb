@@ -29,7 +29,7 @@ describe 'Transactions API' do
     expect(transactions.class).to eq Hash
     expect(transactions['data'].count).to eq(2)
     expect(transactions['data'][0].keys).to eq(['id', 'type', 'attributes'])
-    expect(transactions['data'][0]['attributes'].keys).to eq(['id', 'result'])
+    expect(transactions['data'][0]['attributes'].keys).to eq(['id', 'invoice_id', 'result', 'credit_card_number'])
   end
 
   it 'sends a single transaction' do
@@ -38,6 +38,6 @@ describe 'Transactions API' do
     transactions = JSON.parse(response.body)
     expect(transactions.class).to eq Hash
     expect(transactions['data'].keys).to eq(['id', 'type', 'attributes'])
-    expect(transactions['data']['attributes'].keys).to eq(['id', 'result'])
+    expect(transactions['data']['attributes'].keys).to eq(['id', 'invoice_id', 'result', 'credit_card_number'])
   end
 end
